@@ -8,7 +8,7 @@ module.exports = progress = {
 
         return percentage => {
             const payloadPos = Math.ceil(path.length * (percentage / 100)) - 1
-            const newPath = path.substr(0, payloadPos) + payload + ' ' + path.substr(payloadPos + 1)
+            const newPath = path.substr(0, payloadPos) + payload + path.substr(payloadPos + 1)
 
             earthFrame = earthFrame === 2 ? 0 : earthFrame + 1
 
@@ -19,7 +19,7 @@ module.exports = progress = {
                 pad += '\u00A0'
             }
 
-            return home + '  ' + newPath + ' ' + earth[earthFrame] + pad + percentage + '%'
+            return home + ' ' + newPath + ' ' + earth[earthFrame] + pad + percentage + '%'
         }
     })()
 }
